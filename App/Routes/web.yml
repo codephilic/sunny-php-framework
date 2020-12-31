@@ -1,0 +1,9 @@
+homepage:
+    title: Home
+    path: /
+    controller: App\Controller\Home::home
+
+about:
+    title: Home
+    path: /about
+    controller: App\Controller\About::about

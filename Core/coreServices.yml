@@ -1,0 +1,32 @@
+parameters:
+    # ...
+    #mailer.transport: sendmail
+
+services:
+
+    environment-variables:
+        class: Core\Services\Environment
+        public: true
+
+    database:
+        class: Core\Services\Database
+        arguments:
+            - '@environment-variables'
+        public: true
+    
+    template:
+        class: Core\Services\Template
+        arguments:
+            - '@environment-variables'
+        public: true
+
+    route-collection:
+        class: Core\Route\RouteCollection
+        arguments:
+            - '@environment-variables'
+        public: true
+
+    request:
+        class: Core\Services\Request
+        public: true
+    
